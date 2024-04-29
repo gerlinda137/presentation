@@ -1,40 +1,259 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+  <title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/black.css">
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+        <textarea data-template>
+            ## D3.js
+            [documentation](https://d3js.org)
+          </textarea>
+      </section>
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+              ## What is D3.js?
+              - D3.js, short for Data-Driven Documents, is a JavaScript library for producing dynamic, interactive data visualizations in web browsers.
+            </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            - Developed by Mike Bostock, it's based on web standards such as HTML, SVG, and CSS, making it compatible with modern web browsers.
+            </textarea>
+        </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Why D3.js
+            - D3.js offers a powerful way to bind data to the Document Object Model (DOM) and create data-driven transformations.
+            </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            - It provides a wide range of tools for handling data, creating scales, generating axes, and designing complex visualizations.
+            </textarea>
+        </section>
+        <section>
+          Being a library for manipulating documents based on data, d3.js allows us to automatically render and rerender
+          HTML and SVG elements on the page.
+        </section>
+      </section>
+      <section>
+        <section data-markdown="">
+          <textarea data-template="">
+            ## Key Features of D3.js:
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## 1. Data Binding:
+            D3.js binds data to DOM elements, allowing developers to dynamically update the document based on changes in the data.
+            </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## 2. Data Transformation:
+            D3.js enables developers to apply data-driven transformations to elements, making it easy to create interactive visualizations.
+            </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## 3. DOM Manipulation:
+            With D3.js, developers can easily manipulate the DOM to create, update, and remove elements based on the data.
+            </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## 4. Scalable Vector Graphics (SVG):
+            D3.js leverages SVG for creating scalable, resolution-independent graphics, ideal for creating complex visualizations.
+            </textarea>
+        </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Examples:
+            </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Basic histogram
+            <img src="img/histogram.png" alt="" srcset="">
+            </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Seamless zoomable map tiles
+            <img src="img/map.gif" alt="" srcset="">
+            </textarea>
+        </section>
+      </section>
+      <section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Coding example
+           Lets build together a simple svg barchart using d3.js
+            </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```
+            <!DOCTYPE html>
+                <html lang="en">
+              <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <title>Basic Bar Chart with D3.js</title>
+                  <!-- Include D3.js library -->
+                  <script src="https://d3js.org/d3.v7.min.js"></script>
+              </head>
+              <body>
+              </body>
+              </html>
+              ```
+            </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```
+            <!-- Include CSS for styling -->
+            <style>
+              .bar {
+                  fill: steelblue; /*color of the bar*/
+              }
+            </style>
+            <!-- Container for the bar chart -->
+            <svg id="chart" width="400" height="200"></svg>
+
+              <!-- Include JavaScript file for generating the bar chart -->
+            <script src="script.js"></script>
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Now to the script.js
+            ```
+            <script>
+              // Sample data for the bar chart
+              const data = [10, 40, 30, 60, 50];
+              // original data can be fetched from server or a file, but we are using hard-coded data
+            </script>
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```
+            <script>
+              // Set up dimensions for the chart
+              const width = 400;
+              const height = 200;
+              const barPadding = 5;
+              const barWidth = (width / data.length) - barPadding;
+            </script>
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            d3.js gives us a lot of custom methods to operate with DOM. Many of them are similar to built-in js methods. 
+            You can get to know them [here](http://objjob.phrogz.net/d3/methods)
+            ```
+            <script>
+              // Create SVG element
+              const svg = d3.select("#chart")
+                .attr("width", width)
+                .attr("height", height);
+            </script>
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```
+            <script>
+              // Create bars
+              svg.selectAll("rect")
+                // This method selects all existing <rect> elements within the SVG container. If no <rect> elements exist, an empty selection is returned. 
+                .data(data)  // binds the provided data array to the selection. It associates each data value in the array with a corresponding DOM element in the selection.
+                .enter() // The .enter() method is used to create placeholder elements for any data items that don't have corresponding DOM elements. It returns a selection containing these placeholder elements.
+                .append("rect")
+                .attr("x", (d, i) => i * (barWidth + barPadding))
+                .attr("y", d => height - d)
+                .attr("width", barWidth)
+                .attr("height", d => d) // set height according to data value
+                .attr("class", "bar");
+            </script>
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ```
+            <script>
+              //Adding labels
+              svg.selectAll("text")
+                .data(data)
+                .enter()
+                .append("text")
+                .text(d => d) // set text of the label according to data
+                .attr("x", (d, i) => i * (barWidth + barPadding) + barWidth / 2)
+                .attr("y", d => height - d + 15)
+                .attr("text-anchor", "middle")
+                .attr("font-family", "sans-serif")
+                .attr("font-size", "12px")
+                .attr("fill", "white");
+            </script>
+            ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            ## Lets look at the result
+            <img src="img/example.png" alt="" srcset="">
+          </textarea>
+        </section>
+      </section>
+      <section>
+        D3.js is a powerful and flexible tool to operate with DOM, which makes it very useful in building complex custom
+        visual elements.
+        Thank you for attention!
+      </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+  </script>
+</body>
+
 </html>
